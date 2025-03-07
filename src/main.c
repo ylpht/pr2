@@ -7,12 +7,12 @@
 #include "logger.h"
 
 void print_help() {
-    printf("Использование: myutil [Настройки]\n");
-    printf("  -u, --users        Показывает список пользователей\n");
-    printf("  -p, --processes    Показывает процессы\n");
-    printf("  -h, --help         Вывод справки\n");
-    printf("  -l, --log PATH     Запись в лог PATH\n");
-    printf("  -e, --errors PATH  Ошибки при записи в лог PATH\n");
+    printf("РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ: myutil [РќР°СЃС‚СЂРѕР№РєРё]\n");
+    printf("  -u, --users        РџРѕРєР°Р·С‹РІР°РµС‚ СЃРїРёСЃРѕРє РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№\n");
+    printf("  -p, --processes    РџРѕРєР°Р·С‹РІР°РµС‚ РїСЂРѕС†РµСЃСЃС‹\n");
+    printf("  -h, --help         Р’С‹РІРѕРґ СЃРїСЂР°РІРєРё\n");
+    printf("  -l, --log PATH     Р—Р°РїРёСЃСЊ РІ Р»РѕРі PATH\n");
+    printf("  -e, --errors PATH  РћС€РёР±РєРё РїСЂРё Р·Р°РїРёСЃРё РІ Р»РѕРі PATH\n");
 }
 
 int main(int argc, char* argv[]) {
@@ -42,14 +42,14 @@ int main(int argc, char* argv[]) {
         case 'l':
             log_file = fopen(optarg, "w");
             if (!log_file) {
-                fprintf(stderr, "Ошибка: Недоступна запись в лог: %s\n", optarg);
+                fprintf(stderr, "РћС€РёР±РєР°: РќРµРґРѕСЃС‚СѓРїРЅР° Р·Р°РїРёСЃСЊ РІ Р»РѕРі: %s\n", optarg);
                 return 1;
             }
             break;
         case 'e':
             error_file = fopen(optarg, "w");
             if (!error_file) {
-                fprintf(stderr, "Ошибка: Невозможно записать ошибки в лог: %s\n", optarg);
+                fprintf(stderr, "РћС€РёР±РєР°: РќРµРІРѕР·РјРѕР¶РЅРѕ Р·Р°РїРёСЃР°С‚СЊ РѕС€РёР±РєРё РІ Р»РѕРі: %s\n", optarg);
                 return 1;
             }
             break;
